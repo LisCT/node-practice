@@ -1,6 +1,8 @@
 // problem: we need a simple way to look at a user's badge count and Javascript points.
 // solution: Use Node.js to connect to treehouse's API to get profile information to print out
 
+// require https module
+const https = require('https');
 
 // to print msg to console
 
@@ -10,51 +12,38 @@ function printMessage(username, badgeCount, points){
 
     console.log(messages);
 
+}
+
+function getProfile(username){
+
+    const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
+
+        let body = "";
+        // Read the data 
+
+        response.on('data', data => {
+
+            body += data.toString();
+
+        });
+
+        // end handle of the response
+        response.on('end', () => {
+
+            // Parse the data
+            const profile = JSON.parse(body);
+        
+            // print the data 
+            printMessage(username, profile.badges.length, profile.points.JavaScript);
+            
+        });
+
+    });
 
 }
 
+// calling the user to get the data, receive the username in the terminal 
 
+const users = process.argv.slice(2);
 
-// Connect to the API URL (https://teamtreehouse.com/claudiotellez2.json)
-
-function fetchData(url) {
-		
-	return fetch(url)
-		.then(checkStatus)
-		.then(res => res.json())
-		.catch(error => console.log('Looks like there was a problem', error))
-	
-}
-
-
-// promise all return an array with the responses messages
-// is a sequense when one load then load other
-
-Promise.all([
-	fetchData('https://teamtreehouse.com/claudiotellez2.json')
-])
-.then(data => {
-	
-	console.log(data);
-	
-})
-
-
-function checkStatus(response){
-	
-	if(response.ok){
-		
-		return Promise.resolve(response);
-		
-	}else{
-		
-		return Promise.reject(new Error(response.statusText));
-	
-	}
-	
-}
-
-
-// Read the data 
-// Parse the data
-// print the data 
+users.forEach( getProfile );
