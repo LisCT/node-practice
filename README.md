@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a collection of project with the porpuse of practice. I've been learning from different sources like Teamtreehouse, Pluralsight, Wesbos, Books and Blogs.
+This is a collection of project with the porpuse of practice. I've been learning from different sources like Teamtreehouse, Pluralsight, Wesbos, Books and B- logs.
 
 In this modules I touched so far:
 
@@ -17,6 +17,8 @@ Structure folder:
 
     |- profile app/
         |- app.js -> simple way to look at a user's badge treehouse's account and Javascript points.
+    |- weather app/
+        |- app.js -> connects to a weather API and display information based on a zip code or other user input.
 
 ## How it works
 
