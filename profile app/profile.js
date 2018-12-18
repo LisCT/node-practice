@@ -4,23 +4,13 @@ const https = require('https');
 // require http module
 const http = require('http');
 
-// print error messages
-function printError(error){
+// require for errors
+const printError = require('./printError');
 
-    console.error(error.message);
+// require print message. Data of the user
+const printMessage = require('./printMessage');
 
-}
-
-// to print msg to console
-
-function printMessage(username, badgeCount, points){
-
-    const messages = `${username} has ${badgeCount} total badge(s) and ${points} in Javascript`;
-
-    console.log(messages);
-
-}
-
+// Module Get Profile
 function get(username){
 
     try{
@@ -47,11 +37,11 @@ function get(username){
                         const profile = JSON.parse(body);
                     
                         // print the data 
-                        printMessage(username, profile.badges.length, profile.points.JavaScript);
+                        printMessage.message(username, profile.badges.length, profile.points.JavaScript);
                         
                     } catch (error){
-
-                        printError(error)
+                        
+                        printError.error('There was an error parsing the profile', username);
 
                     }
                     
@@ -59,22 +49,20 @@ function get(username){
 
             } else {
 
-                const message = `There was an error getting the profile for ${username} (${http.STATUS_CODES[response.statusCode]}) -- ${response.statusCode}`;
+                const message = `There was an error getting the profile. (${http.STATUS_CODES[response.statusCode]}) -- ${response.statusCode}`;
 
-                const statusCodeError = new Error(message);
-
-                printError(statusCodeError);
+                printError.error(message, username);
                 
             }
      
         });
 
         // errors
-        request.on('error',  error => printError(error) );
+        request.on('error',  error => printError.error(`Error in the url request. (${error})`, username) );
 
     } catch(error){
 
-        printError(error)
+        printError.error('There was an error requesting the user url', username);
 
     }
 

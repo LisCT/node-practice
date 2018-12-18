@@ -4,10 +4,8 @@
 // solution: Use Node.js to connect to treehouse's API to get profile information to print out
 
 // improvements
-    // friendlier error msj when the conecction fail  or parse error
     // You could make the first argument passed up to app.js a given topic area.
     // You could then see how many points a student has in that topic area.
-    //Finally you could extract all the printing methods out into its own module.
 
 const profile = require('./profile');
 
