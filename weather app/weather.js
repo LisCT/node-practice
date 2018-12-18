@@ -1,5 +1,6 @@
 
 const https = require('https'); // require https 
+const http = require('http'); // require https 
 const querystring = require('querystring'); // require querystring
 const api = require('./api.json'); //requiere the api key
 const printError = require('./printError'); // require to print out error message
@@ -51,10 +52,10 @@ function get(query){
 
                         // print data
                         printWeather.message(weather);
-
+                    
                     } catch(error){
 
-                        printError.error('There was an error parsing the info');
+                        printError.error('There was an error parsing the weather');
 
                     }
                   
@@ -63,7 +64,7 @@ function get(query){
 
             }else{
 
-                const message = `There was an error getting the info. (${http.STATUS_CODES[response.statusCode]}) -- ${response.statusCode}`;
+                const message = `There was an error getting the weather in "${query}". (${http.STATUS_CODES[response.statusCode]}) -- ${response.statusCode}`;
 
                 printError.error(message);
 
@@ -75,7 +76,7 @@ function get(query){
         
     }catch(error){
 
-        printError.error('There was an error requesting the user url');
+        printError.error('There was an error requesting the url for the weather');
         
     }
 
