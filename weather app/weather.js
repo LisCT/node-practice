@@ -1,11 +1,9 @@
-// require https 
-const https = require('https');
 
-//requiere the api key
-const api = require('./api.json');
-
-// require error
-const printError = require('./printError');
+const https = require('https'); // require https 
+const querystring = require('querystring'); // require querystring
+const api = require('./api.json'); //requiere the api key
+const printError = require('./printError'); // require to print out error message
+const printWeather = require('./printMessage'); // requeire to print out temp details
 
 // getting the weather (API call)
 function get(query){
@@ -49,10 +47,10 @@ function get(query){
 
                     try{
 
-                        const info = JSON.parse(body);
+                        const weather = JSON.parse(body);
 
                         // print data
-                        console.log(info);
+                        printWeather.message(weather);
 
                     } catch(error){
 
@@ -72,7 +70,6 @@ function get(query){
             }
 
         });
-
 
        request.on('error', error => printError.error(`Error in the url request. (${error}`));
         

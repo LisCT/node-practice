@@ -1,11 +1,12 @@
 // to print msg to console
 
-function printMessage(username, badgeCount, points){
+// Print out temp details
+function printWeather(weather) {
 
-    const messages = `${username} has ${badgeCount} total badge(s) and ${points} in Javascript`;
-
-    console.log(messages);
+    const message = `Current temperature in ${weather.name} is ${weather.main.temp}F`;
+    console.log(message);
 
 }
+  
 
-module.exports.message = printMessage;
+module.exports.message = printWeather;
