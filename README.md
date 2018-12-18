@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a collection of project with the porpuse of practice. I've been learning from different sources teamtreehouse, pluralsight, wesbos and other likes books or blogs.
+This is a collection of project with the porpuse of practice. I've been learning from different sources like Teamtreehouse, Pluralsight, Wesbos, Books and Blogs.
 
 In this modules I touched so far:
 

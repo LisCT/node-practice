@@ -1,0 +1,10 @@
+#Compile Files
+/node_modules
+/public/CNAME
+/weather app/api.json
+.vscode
+.lock
+
+#OS junk files
+[Tt]humbs.db
+.DS_Store

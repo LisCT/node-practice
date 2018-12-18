@@ -1,8 +1,8 @@
 // print error messages
 
-function printError(error, user){
+function printError(error){
     
-    const message = `${error}. For the user ${user}.`;
+    const message = `${error}`;
 
     const codeError = new Error(message);
 
