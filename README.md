@@ -19,6 +19,8 @@ Structure folder:
         |- app.js -> simple way to look at a user's badge treehouse's account and Javascript points.
     |- weather app/
         |- app.js -> connects to a weather API and display information based on a zip code or other user input.
+    |- stock app/
+        |- app.js -> connects to a stock API and display information based on the stock name.   
 
 ## How it works
 
