@@ -48,7 +48,7 @@ function get(query){
 
                     try{
 
-                        const weather = JSON.parse(body);
+                        const weather = JSON.parse(bodyd);
 
                         // print data
                         printWeather.message(weather);

@@ -1,7 +1,7 @@
 
 function printMessage(data, stock){
 
-    const message = `${stock} latest price is ${data[`${stock}`].quote.latestPrice} from ${data[`${stock}`].quote.latestSource}.`;
+    const message = `${stock} latest price is ${data[`${stock}`].quote.latestPrice}`;
    
     // print the data
     console.log(message);
