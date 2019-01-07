@@ -1,0 +1,10 @@
+/** this is a grid system */
+h1 {
+  color: red; }
+
+input[disabled] {
+  background-color: #f2f2f2;
+  border-color: #b3b3b3;
+  color: #404040; }
+
+/*# sourceMappingURL=app.css.map */

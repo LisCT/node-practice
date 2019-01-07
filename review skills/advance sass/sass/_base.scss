@@ -1,0 +1,41 @@
+$text-color: red;
+
+@mixin foo($text_color: $text-color){
+    color: $text-color;
+}
+
+h1{
+    @include foo;
+}
+
+// core color
+$gray: #333;
+
+// asign to a semantic variable
+
+$input-disabled-color:          $gray;
+
+// use semantic variable as asssigned to additional semantics
+
+$input: (
+    disabled: (
+        background: lighten($input-disabled-color, 75%),  
+        border: lighten($input-disabled-color, 50%),     
+        text: lighten($input-disabled-color, 5%) 
+    )
+    
+);    
+
+//https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
+
+// Our function for shorter usage of map-get();
+@function setprop($scheme, $prop: text) {
+    @return map-get(map-get($input, $scheme), $prop);
+}
+
+input[disabled]{
+    background-color:  setprop(disabled, background);
+    border-color:  setprop(disabled, border);
+    color:  setprop(disabled);
+}
+

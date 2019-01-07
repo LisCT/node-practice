@@ -1,0 +1,52 @@
+// watch sass for changes
+sass -r sass-globbing --watch sass:css
+
+// load a localhost
+python -m SimpleHTTPServer
+
+// to add comment for the specific line
+sass -l sass/app.scss:css/app.css
+
+1- sourcemap file is for follow the location of the code
+2- to add a workspace into chrome developer tool to edit directly the style. ../ settings/ workspace/ add
+3- sass-globbing for add all files at once
+4 -  !global  is like important for sass vars reasigning 
+5- !default means if another var with the same name has been set use the value
+
+
+why | who | HOW | PROCESS
+
+|- source
+|- build
+    |- scripts
+        |- vendors (third-part plugin or libraries)
+        |- app.js
+    | - styles
+        | - 0-helpers
+            |- 0- helpers: partial group var, mixin, function
+            |- functions
+            |- mixins
+            |- variables
+        | - 1-plugins
+        | - 2-base
+            |- 2-base.scss:  partial group
+            |- global: links, html 
+            |- reset
+            |- typhography
+        | - 3-layout
+            |- 3-layour.scss: partial group
+            |- footer
+            |- navegation
+            |- siteHeader
+            |- siteMainContent
+        | - 4-modules: no global layout, you can add in any part of the page
+            |- 4-layout.scss: partial group
+            |- featureStatement
+            
+            |- video
+            |- valueList
+        | - 5-templates: override breakpoints to make it unique
+            |- 5-templates.scss : partial group
+            |- home
+            |- jobs
+        |- main.scss

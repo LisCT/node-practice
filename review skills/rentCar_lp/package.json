@@ -1,0 +1,8 @@
+{
+  "name": "rent-car-lp",
+  "version": "1.0.0",
+  "description": "rent car landing page.",
+  "main": "app.js",
+  "author": "Lisbel Cruz",
+  "license": "MIT"
+}
