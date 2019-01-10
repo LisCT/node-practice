@@ -1,7 +1,7 @@
 {
-  "name": "rent-car-lp",
+  "name": "tip-app-lp",
   "version": "1.0.0",
-  "description": "rent car landing page.",
+  "description": "Tip app landing page.",
   "main": "app.js",
   "author": "Lisbel Cruz",
   "license": "ISC",

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="93px" height="118px" viewBox="0 0 93 118" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_play</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-14.1%" y="-10.9%" width="128.2%" height="121.8%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD---Landing-Page" transform="translate(-674.000000, -2492.000000)" fill="#FFFFFF">
+            <g id="Review" transform="translate(254.000000, 2049.000000)">
+                <g id="icon_play" filter="url(#filter-1)" transform="translate(424.000000, 445.000000)">
+                    <path d="M80.4664948,63.6954354 L16.4033473,108.140217 C14.6211219,109.370583 12.5467686,110 10.4668919,110 C8.7926802,110 7.13074274,109.598955 5.60014007,108.792534 C2.16027321,106.957507 0,103.360483 0,99.4459657 L0,10.5557828 C0,6.64064637 2.16027321,3.04300363 5.60014007,1.20797684 C9.04000693,-0.611577541 13.196078,-0.360924641 16.4033473,1.86091218 L80.4664948,46.3044564 C83.3012397,48.2725458 85,51.5285579 85,54.9999459 C85,58.4719527 83.3018534,61.7273459 80.4664948,63.6954354" id="Fill-1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

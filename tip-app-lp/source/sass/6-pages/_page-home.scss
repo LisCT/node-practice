@@ -1,0 +1,57 @@
+#l-header{
+
+   height: 100vh; 
+
+}
+
+.c-nav{
+
+    align-items: center;
+    display: flex;
+   
+
+    &__item{
+
+      list-style: none;
+
+    }
+
+    &__item:first-child{
+
+        margin-right: auto;
+
+    }
+
+    a{  
+        border-radius: 0.6em;
+        color: $dark;
+        display: block;
+        font-size: .9rem;
+        padding: 1em 1.7rem;
+        text-decoration: none;
+
+    }
+
+    &__button a{
+
+        background-color: $main-color;
+        color: white;
+        font-weight: 600;
+
+    }
+
+}
+
+.c-des{
+
+    &__title{
+       
+        font-size: 4rem;
+    }
+
+    &___copy{
+
+        font-size: 1rem;
+    }
+
+}
