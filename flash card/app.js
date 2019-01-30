@@ -38,7 +38,12 @@ app.post('/hello', (req, res) => {
     res.cookie('username', req.body.username); // save it in the cookies (set)
     res.redirect('/');
 
-})
+});
+
+app.post('/goodbye', (req, res) => {
+    res.clearCookie('username');
+    res.redirect('/hello');
+});
 
 app.listen(3000, () => {
 
