@@ -4,56 +4,31 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false}));
-app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: false})); // to be able to access to the body response
+app.use(cookieParser()); // to be able to access to the cookies
 
 app.set('view engine', 'pug');
 
-// use runs everytime middleware
-app.use((req, res, next) => {
-    req.message = 'this message made it!';
-    next();
-});
+const mainRoutes = require('./routes/index');
+const cardRoutes = require('./routes/cards');
+
+app.use(mainRoutes);
+app.use('/cards', cardRoutes);
 
 app.use((req, res, next) => {
-    console.log(req.message);
-    next();
-})
 
-app.get('/', (req, res) => {
-
-    const name = req.cookies.username;
-
-    // passing name from the cookies to avoid repeat it again
-    name ? res.render('index', { name }) : res.redirect('/hello');
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 
 });
 
-app.get('/cards', (req, res) => {
+app.use((err, req, res, next) => {
 
-    res.render('card', { 
-        prompt: "who is buried in Grant's tomb?", hint: "Think about whose tomb it is."});
+    res.locals.error = err;
+    res.status(err.status);
+    res.render('error', err);
 
-});
-
-app.get('/hello', (req, res) => {
-
-    const name = req.cookies.username;
-
-    name ? res.redirect('/') : res.render('hello');
-
-});
-
-app.post('/hello', (req, res) => {
-
-    res.cookie('username', req.body.username); // save it in the cookies (set)
-    res.redirect('/');
-
-});
-
-app.post('/goodbye', (req, res) => {
-    res.clearCookie('username');
-    res.redirect('/hello');
 });
 
 app.listen(3000, () => {
