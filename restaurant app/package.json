@@ -2,7 +2,7 @@
   "name": "restaurant-app",
   "version": "1.0.0",
   "private": true,
-  "description": "full stack restauran app which users can search, geolocate, review and curate their favourite restaurants from around the world.",
+  "description": "full stack restaurant app which users can search, geolocate, review and curate their favourite restaurants from around the world.",
   "main": "index.js",
   "author": "Lisbel Cruz",
   "license": "MIT",

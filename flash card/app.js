@@ -7,6 +7,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false})); // to be able to access to the body response
 app.use(cookieParser()); // to be able to access to the cookies
 
+app.use('/static', express.static('public')); // load the public folder as a static server
+
 app.set('view engine', 'pug');
 
 const mainRoutes = require('./routes/index');
