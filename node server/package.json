@@ -1,0 +1,14 @@
+{
+  "name": "creating-node-server",
+  "version": "1.0.0",
+  "description": "creating a node server with http",
+  "main": "script.js",
+  "author": "lisbel-cruz",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
