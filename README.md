@@ -20,7 +20,12 @@ Structure folder:
     |- weather app/
         |- app.js -> connects to a weather API and display information based on a zip code or other user input.
     |- stock app/
-        |- app.js -> connects to a stock API and display information based on the stock name.   
+        |- app.js -> connects to a stock API and display information based on the stock name.  
+    |- flash cards/
+        |- app.js -> express app with redirect 
+    |-  node server/
+        |- script.js -> basic server with node
+ 
 
 ## How it works
 
